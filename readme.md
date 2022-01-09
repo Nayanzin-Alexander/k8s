@@ -13,5 +13,10 @@ vboxmanage showvminfo minikube | grep "Memory size\|Number of CPUs"
 
 ## [Basics](https://minikube.sigs.k8s.io/docs/start/)
 ```
-minikube start --memory 8192 --cpus 2
+minikube start --memory 8192 --cpus 3
+```
+
+## Dashboard
+```
+minikube dashboard
 ```
