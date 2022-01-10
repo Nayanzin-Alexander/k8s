@@ -53,3 +53,33 @@ kubectl delete  deployment ${deployment-name}
 kubectl apply -f ./mongo
 minikube service mongo-express-service
 ```
+
+## Namespace
+- Organise resources in namespace
+- Virtual cluster inside a cluster
+- > kubectl get namespace
+  - default - default fot the resources if other namespace is specified
+  - kube-node-lease - holds information about nodes availability
+  - kube-public - publicly accessible data
+  - kube-system - for system
+  - kubernetes-dashboard - shipped with minikube
+- Why to use namespaces?
+  - helps to logically group related resources
+  - helps to organize many teams, many configurations
+  - Separate environments
+  - Blue/green deployment
+  - Limit access to the resources within a Namespace. Each team has separated environment
+  - Limit CPU, RAM, Storage per Namespace
+- > kubectl apply -f ${file} -n ${namespace}
+  > kubectl get pod -n ${namespace}
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+name: <insert-namespace-name-here>
+```
+- set active namespace: 
+  - install kubectx
+  - > kubens # lists all namespaces
+  - > kubens ${namespace} - set ${namespace} as default
+  
