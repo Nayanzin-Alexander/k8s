@@ -82,4 +82,7 @@ name: <insert-namespace-name-here>
   - install kubectx
   - > kubens # lists all namespaces
   - > kubens ${namespace} - set ${namespace} as default
-  
+
+## Ingress
+  * external request to internal service
+  * requires Ingress Controller

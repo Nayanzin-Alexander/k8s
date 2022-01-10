@@ -44,10 +44,10 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  type: LoadBalancer # accepts external requests by assigning external IP address
+#  type: LoadBalancer # accepts external requests by assigning external IP address
   ports:
     - protocol: TCP
       port: 8081 # exposed port
       targetPort: 8081 # should match to the Pod's containerPort
-      nodePort: 30000 # open to external requests. Must be between 30_000-32_767
+#      nodePort: 30000 # open to external requests. Must be between 30_000-32_767
 # minikube service mongo-express-service
